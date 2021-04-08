@@ -22,7 +22,6 @@ class RawPlugin(commands.Cog):
         
         try:
             msg = await ctx.fetch_message(msg)
-            
         except commands.CommandInvokeError:
             return await ctx.send(embed=self._error(msg="Invalid message ID provided."))
         
