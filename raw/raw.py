@@ -13,8 +13,8 @@ class RawPlugin(commands.Cog):
         return discord.Embed(description="** " + msg + " **",
                              color=discord.Color.red())
 
-
     @commands.command()
+    @checks.thread_only()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     async def raw(self, ctx, msg: int=None):
         if msg is None:
