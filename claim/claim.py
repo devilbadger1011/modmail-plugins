@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
-
-
-# from core import checks
+from core import checks
 
 
 def _success_embed(auth):
@@ -37,7 +35,7 @@ class ClaimPlugin(commands.Cog):
         # todo: Add check for reply command
 
     @commands.command()
-    # @checks.thread_only()
+    @checks.thread_only()
     async def claim(self, ctx):
         if ctx.channel in self._temp_index.keys():
             return await ctx.send(embed=_error_embed(dat=self._temp_index[ctx.channel]))
