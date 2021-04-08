@@ -18,12 +18,14 @@ class RawPlugin(commands.Cog):
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     async def raw(self, ctx, msg: int=None):
         if msg is None]:
-            return await ctx.send(embed=self._error(msg="Please provide a message ID"))
+            return await ctx.send(embed=self._error(msg="Please provide a message ID."))
         
         try:
             msg = await ctx.fetch_message(msg)
         except commands.CommandInvokeError:
-            return await ctx.send(embed=self._error(msg="Message not found"))
+            return await ctx.send(embed=self._error(msg="Invalid message ID provided."))
+        if not msg.embeds:
+            return await ctx.send(embed=self._error(msg="Please provide the message ID of an embedded message."))
 
         await ctx.send(f"``` {msg.embeds[0].description} ```")
         
