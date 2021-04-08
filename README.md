@@ -3,6 +3,6 @@
 
 
 
-#### Other plugins:
+### Other plugin repositories:
 - [Robin Mahieu](https://github.com/robinmahieu/modmail-plugins)
 - [Andy](https://github.com/matrix2113/modmail-plugins)
