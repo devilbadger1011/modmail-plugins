@@ -23,16 +23,36 @@ def _thread_not_yours():
                          colour=discord.Colour.red())
 
 
+def _no_message_claimed():
+    return discord.Embed(
+        description="You cannot send a message to this thread's recipient as it is claimed by another user.",
+        colour=discord.Colour.red())
+
+
 def _thread_success_deleted():
     return discord.Embed(description="This thread has been unclaimed successfully!",
                          colour=discord.Colour.green())
 
 
 class ClaimPlugin(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot, add_checks=True):
         self.bot = bot
         self._temp_index = {}
-        # todo: Add check for reply command
+        if add_checks is False:
+            return
+
+        for cmd in [c for c in bot.commands if str(c) == "reply"]:
+            @cmd.add_check
+            async def _is_thread_owner(ctx):
+                if ctx.channel not in self._temp_index.keys():
+                    return True
+
+                if self._temp_index[ctx.channel] != ctx.author:
+                    await ctx.send(embed=_no_message_claimed())
+                    return False
+
+                return True
+            break
 
     @commands.command()
     @checks.thread_only()
@@ -51,7 +71,7 @@ class ClaimPlugin(commands.Cog):
             return await ctx.send(embed=_thread_not_claimed())
 
         if self._temp_index[ctx.channel] != ctx.author:
-            return await ctx.send(_thread_not_yours())
+            return await ctx.send(embed=_thread_not_yours())
 
         del self._temp_index[ctx.channel]
         await ctx.send(embed=_thread_success_deleted())
