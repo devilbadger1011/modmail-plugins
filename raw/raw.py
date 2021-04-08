@@ -10,7 +10,7 @@ class RawPlugin(commands.Cog):
         self.bot = bot
 
     def _error(self, msg):
-        return discord.Embed(description=msg,
+        return discord.Embed(description="** " + msg + " **",
                              color=discord.Color.red())
 
 
