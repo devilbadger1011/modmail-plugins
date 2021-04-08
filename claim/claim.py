@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
+
 from core import checks
+from core.models import PermissionLevel
 
 
 def _success_embed(auth):
@@ -53,8 +55,9 @@ class ClaimPlugin(commands.Cog):
 
                 return True
             break
-
+       
     @commands.command()
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
     @checks.thread_only()
     async def claim(self, ctx):
         if ctx.channel in self._temp_index.keys():
@@ -64,7 +67,8 @@ class ClaimPlugin(commands.Cog):
 
         c = await ctx.send(embed=_success_embed(auth=ctx.author))
         await c.pin(reason="Modmail thread claimed.")
-
+        
+    @checks.has_permissions(PermissionLevel.SUPPORTER)
     @commands.command()
     async def unclaim(self, ctx):
         if ctx.channel not in self._temp_index.keys():
