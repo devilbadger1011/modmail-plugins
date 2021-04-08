@@ -3,11 +3,11 @@ This is a repository with some useful plugins made for [Kyb3r's modmail bot](htt
 
 ## Plugins:
 
-| name               | commands               | description                  | permission needed  |
-|--------------------|------------------------|------------------------------|--------------------|
-| uptime             | 1: uptime              | level amount 12              | None [-1]          | 
-| raw                | 1: raw                 | level give @Papiersnipper 16 | Supporter  [1]     | 
-| claim              | 2: claim, unclaim      | level info @Papiersnipper    | Regular [1]        |
+| name               | commands               | description                        | permission needed  |
+|--------------------|------------------------|------------------------------------|--------------------|
+| uptime             | 1: uptime              | Displays your bot's time data      | None [-1]          | 
+| raw                | 1: raw                 | Gets text from a modmail message   | Supporter  [1]     | 
+| claim              | 2: claim, unclaim      | Claims threads for a spesific user | Regular [1]        |
 
 
 
