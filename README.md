@@ -15,3 +15,4 @@ This is a repository with some useful plugins made for [Kyb3r's modmail bot](htt
 - [Robin Mahieu's plugins](https://github.com/robinmahieu/modmail-plugins)
 - [Andy's plugins](https://github.com/matrix2113/modmail-plugins)
 - [Lorenzo132's plugins](https://github.com/lorenzo132/modmail-plugins)
+- [Sora's plugins](https://github.com/6days9weeks/modmail-plugins)
