@@ -43,7 +43,7 @@ class ClaimPlugin(commands.Cog):
         if add_checks is False:
             return
 
-        for cmd in [c for c in bot.commands if str(c) == "reply"]:
+        for cmd in [c for c in bot.commands if str(c) in ["reply", "areply", "anonymousreply"]]:
             @cmd.add_check
             async def _is_thread_owner(ctx):
                 if ctx.channel not in self._temp_index.keys():
@@ -54,8 +54,9 @@ class ClaimPlugin(commands.Cog):
                     return False
 
                 return True
+
             break
-       
+
     @commands.command()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @checks.thread_only()
@@ -67,7 +68,7 @@ class ClaimPlugin(commands.Cog):
 
         c = await ctx.send(embed=_success_embed(auth=ctx.author))
         await c.pin(reason="Modmail thread claimed.")
-        
+
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     @commands.command()
     async def unclaim(self, ctx):
