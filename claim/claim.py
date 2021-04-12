@@ -43,7 +43,7 @@ class ClaimPlugin(commands.Cog):
         if add_checks is False:
             return
 
-        for cmd in [c for c in bot.commands if str(c) in ["reply", "areply", "anonymousreply"]]:
+        for cmd in [c for c in bot.commands if str(c) in ["reply", "areply"]]:
             @cmd.add_check
             async def _is_thread_owner(ctx):
                 if ctx.channel not in self._temp_index.keys():
