@@ -31,5 +31,5 @@ class RawPlugin(commands.Cog):
         await ctx.send(f"``` {msg.embeds[0].description} ```")
         
 
-def RawPlugin(bot):
+def setup(bot):
     bot.add_cog(RawPlugin(bot))
