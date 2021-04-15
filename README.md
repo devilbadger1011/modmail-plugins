@@ -1,4 +1,4 @@
-# better-modmail-plugins
+# modmail-plugins
 ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=coalbyte.modmail-plugins)
 
 This is a repository with some useful plugins made for [Kyb3r's modmail bot](https://github.com/kyb3r/modmail).
