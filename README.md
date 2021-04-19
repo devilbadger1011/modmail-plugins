@@ -21,3 +21,4 @@ This is a repository with some useful plugins made for [Kyb3r's modmail bot](htt
 - [Sora's plugins](https://github.com/6days9weeks/modmail-plugins)
 - [Fourjr's plugins](https://github.com/fourjr/modmail-plugins)
 - [Taaku18's plugins](https://github.com/Taaku18/modmail-plugins)
+- [DAzVise's plugins](https://github.com/DAzVise/modmail-plugins/tree/master/role
