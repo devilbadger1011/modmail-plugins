@@ -10,8 +10,9 @@ This is a repository with some useful plugins made for [Kyb3r's modmail bot](htt
 |--------------------|------------------------------------------------------------------------------------------------------|
 | uptime             | 1: uptime                                  | Displays your bot's time data      | None [-1]          | 
 | raw                | 1: raw                                     | Gets text from a modmail message   | Supporter  [1]     | 
-| claim              | 2: claim, unclaim                          | Claims threads for a spesific user | Regular [1]        |
-| remindme           | 2. remindme, cancelreminder, reminderdelay | Create simple reminders            | None [-1]          |
+| claim              | 2: claim, unclaim                          | Claims threads for a spesific user | Regular [0]        |
+| remindme           | 3: remindme, cancelreminder, reminderdelay | Create simple reminders            | None [-1]          |
+| apply              | 1: apply / form                            | Fill forms through modmail         | Supporter  [1]     |
 ```
 
 ## Other plugin repositories:
