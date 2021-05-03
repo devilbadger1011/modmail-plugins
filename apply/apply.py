@@ -83,7 +83,7 @@ class ApplicationPlugin(commands.Cog):
             return m.author == ctx.author and m.channel == ctx.channel
 
         for q in self.questions:
-            embed = discord.Embed(description="__question #{}:__ {}".format(self.questions.index(q), q),
+            embed = discord.Embed(description="__question #{}:__ {}".format(self.questions.index(q) + 1, q),
                                   colour=settings["COLOUR"])
 
             q_msg = await ctx.channel.send(embed=embed)
