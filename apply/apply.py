@@ -13,7 +13,7 @@ settings = {
     "QUESTIONS": ["What's 1+1?", "How old are you?"]
 }
 
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 
 
 def canceled_timeout_embed():
@@ -49,6 +49,8 @@ def response_embed(r, u):
         embed.add_field(name=f"**{q}**",
                         value=a,
                         inline=False)
+
+    embed.set_footer(text=f"User ID: {str(u.id)}", icon_url=u.avatar_url)
     return embed
 
 
@@ -83,7 +85,7 @@ class ApplicationPlugin(commands.Cog):
             embed = discord.Embed(description="__question #{}:__ {}".format(self.questions.index(q), q),
                                   colour=settings["COLOUR"])
 
-            await ctx.channel.send(embed=embed)
+            q_msg = await ctx.channel.send(embed=embed)
 
             try:
                 msg = await self.bot.wait_for('message', check=check, timeout=settings["TIMEOUT"])
@@ -91,6 +93,9 @@ class ApplicationPlugin(commands.Cog):
                 return await ctx.send(embed=canceled_timeout_embed())
 
             r[q] = msg.content
+            
+            for _ in [msg, q_msg]:
+                await _.delete()
 
         await ctx.send(embed=confirmation_embed())
 
