@@ -43,6 +43,7 @@ def success_delivery():
 
 def response_embed(r, u):
     embed = discord.Embed(title=f"{u.name}'s Form Response:",
+                          url="https://github.com/CoalByte/modmail-plugins/tree/master/apply",
                           colour=settings["COLOUR"])
 
     for q, a in r.items():
