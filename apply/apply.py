@@ -13,7 +13,7 @@ settings = {
     "QUESTIONS": ["What's 1+1?", "How old are you?"]
 }
 
-__version__ = 1.1.2
+__version__ = "1.1.2"
 
 
 def canceled_timeout_embed():
