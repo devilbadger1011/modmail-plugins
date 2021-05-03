@@ -13,6 +13,8 @@ settings = {
     "QUESTIONS": ["What's 1+1?", "How old are you?"]
 }
 
+__version__ = 1.1.2
+
 
 def canceled_timeout_embed():
     return discord.Embed(description="The response process has been canceled due to inactivity.",
