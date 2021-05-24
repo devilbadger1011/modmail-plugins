@@ -13,7 +13,8 @@ This is a repository with some useful plugins made for [Kyb3r's modmail bot](htt
 | claim              | 2: claim, unclaim                          | Claims threads for a spesific user | Regular [0]        |
 | remindme           | 3: remindme, cancelreminder, reminderdelay | Create simple reminders            | None [-1]          |
 | apply              | 1: apply / form                            | Fill forms through modmail         | Supporter  [1]     |
-| purger             | 1: purge                                   | Purge a set amount of messages     | Moderator [2]
+| purger             | 1: purge                                   | Purge a set amount of messages     | Moderator [2]      |
+| counting           | 0                                          | Self explanatory                   | None [-1]          |
 ```
 
 ## Other plugin repositories:
