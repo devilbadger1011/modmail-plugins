@@ -81,6 +81,14 @@ class ClaimPlugin(commands.Cog):
         del self._temp_index[ctx.channel]
         await ctx.send(embed=_thread_success_deleted())
 
+    @commands.has_permissions(manage_channels=True)
+    @checks.thread_only()
+    @commands.command()
+    async def overwriteclaim(self, ctx):
+        del self._temp_index[ctx.channel]
+
+        await ctx.send(embed=_thread_success_deleted())
+
 
 def setup(bot):
     bot.add_cog(ClaimPlugin(bot))
