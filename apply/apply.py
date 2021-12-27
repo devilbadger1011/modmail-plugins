@@ -7,10 +7,10 @@ import asyncio
 settings = {
     "COLOUR": discord.Colour.blurple(),
     "ADMIN": PermissionLevel.SUPPORTER,
-    "RESPONSE_CHANNEL": 806620866992406592,
+    "RESPONSE_CHANNEL": 925063216923541574,
     "TIMEOUT": 60,
-    "OWNER": 589362451506528256,
-    "QUESTIONS": ["What's 1+1?", "How old are you?"]
+    "OWNER": 386906106284343297,
+    "QUESTIONS": ["What is your name?", "What is your nationality?", "Would you like to be a fulltime or Reserve Driver?", "What is your dry TT time around Britain?", "What is your dry TT time around Russia?", "What 3 teams would you like to race for?", "Who is your preferred teammate?"]
 }
 
 __version__ = "1.1.3"
